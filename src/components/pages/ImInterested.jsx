@@ -86,7 +86,7 @@ function ImInterested() {
                 <p className="text-white font-display font-bold text-lg mb-2">Need Help?</p>
                 <p className="text-white/80 text-sm mb-4">Call us directly for immediate assistance</p>
                 <a
-                  href={`tel:${academyInfo.phone}`}
+                  href={`tel:${academyInfo.phone.replace(/\s/g, '')}`}
                   className="inline-flex items-center gap-2 text-gold-400 font-semibold hover:text-gold-300 transition-colors"
                 >
                   <Phone className="w-4 h-4" />

@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { Send, CheckCircle2 } from 'lucide-react'
+import { Send } from 'lucide-react'
 import toast, { Toaster } from 'react-hot-toast'
 import Button from '../common/Button'
 import { experienceLevels, preferredPrograms } from '../../data/content'
+import { buildWhatsAppUrl, buildInterestWhatsAppMessage } from '../../utils/whatsapp'
 
 const initialForm = {
   name: '',
@@ -16,7 +17,6 @@ const initialForm = {
 
 export default function InterestForm() {
   const [form, setForm] = useState(initialForm)
-  const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -28,27 +28,9 @@ export default function InterestForm() {
       toast.error('Please fill in your name and phone number.')
       return
     }
-    setSubmitted(true)
-    toast.success('Interest registered! We\'ll contact you within 48 hours.')
-    setForm(initialForm)
-  }
 
-  if (submitted) {
-    return (
-      <div className="text-center py-12 px-6">
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 mb-6">
-          <CheckCircle2 className="w-10 h-10" />
-        </div>
-        <h3 className="font-display text-2xl font-bold text-navy-900 mb-3">Thank You!</h3>
-        <p className="text-navy-600 max-w-md mx-auto">
-          Your interest has been registered. Our team will reach out within 48 hours to schedule
-          your trial session.
-        </p>
-        <Button className="mt-8" onClick={() => setSubmitted(false)}>
-          Register Another Player
-        </Button>
-      </div>
-    )
+    const message = buildInterestWhatsAppMessage(form)
+    window.location.href = buildWhatsAppUrl(message)
   }
 
   const inputClass =
@@ -149,9 +131,13 @@ export default function InterestForm() {
           />
         </div>
 
+        <p className="text-xs text-navy-500">
+          Submitting will open WhatsApp with your details pre-filled so our team can respond quickly.
+        </p>
+
         <Button type="submit" className="w-full sm:w-auto">
           <Send className="w-4 h-4" />
-          Submit My Interest
+          Show Interest on WhatsApp
         </Button>
       </form>
     </>

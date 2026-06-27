@@ -30,8 +30,8 @@ function Contact() {
     'w-full px-5 py-3.5 rounded-xl bg-white border border-navy-100 text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all'
 
   const contactCards = [
-    { icon: MapPin, title: 'Visit Us', content: academyInfo.address },
-    { icon: Phone, title: 'Call Us', content: academyInfo.phone, href: `tel:${academyInfo.phone}` },
+    { icon: MapPin, title: 'Visit Us', content: academyInfo.address, href: academyInfo.mapUrl, external: true },
+    { icon: Phone, title: 'Call Us', content: academyInfo.phone, href: `tel:${academyInfo.phone.replace(/\s/g, '')}` },
     { icon: Mail, title: 'Email Us', content: academyInfo.email, href: `mailto:${academyInfo.email}` },
     { icon: Clock, title: 'Working Hours', content: academyInfo.hours },
   ]
@@ -58,7 +58,12 @@ function Contact() {
                   </div>
                   <h3 className="font-display font-bold text-navy-900 mb-2">{card.title}</h3>
                   {card.href ? (
-                    <a href={card.href} className="text-navy-600 text-sm hover:text-emerald-600 transition-colors">
+                    <a
+                      href={card.href}
+                      target={card.external ? '_blank' : undefined}
+                      rel={card.external ? 'noopener noreferrer' : undefined}
+                      className="text-navy-600 text-sm hover:text-emerald-600 transition-colors"
+                    >
                       {card.content}
                     </a>
                   ) : (
@@ -151,7 +156,7 @@ function Contact() {
             <div className="rounded-3xl overflow-hidden shadow-2xl h-full min-h-[400px] bg-navy-100 relative">
               <iframe
                 title="Academy Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.123456789!2d78.4867!3d17.385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDIzJzA2LjAiTiA3OMKwMjknMTIuMSJF!5e0!3m2!1sen!2sin!4v1234567890"
+                src={academyInfo.mapEmbedUrl}
                 className="w-full h-full min-h-[400px] border-0"
                 allowFullScreen
                 loading="lazy"

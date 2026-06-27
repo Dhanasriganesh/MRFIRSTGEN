@@ -6,7 +6,7 @@ import {
   Clock,
   ArrowUpRight,
 } from 'lucide-react'
-import { IconInstagram, IconFacebook, IconYoutube, IconTwitter } from '../common/SocialIcons'
+import { IconInstagram } from '../common/SocialIcons'
 import { academyInfo, navLinks } from '../../data/content'
 import Button from '../common/Button'
 import Logo from '../common/Logo'
@@ -29,23 +29,26 @@ function Footer() {
               commitment to every player's journey.
             </p>
             <div className="flex gap-3">
-              {[
-                { icon: IconInstagram, href: academyInfo.social.instagram },
-                { icon: IconFacebook, href: academyInfo.social.facebook },
-                { icon: IconYoutube, href: academyInfo.social.youtube },
-                { icon: IconTwitter, href: academyInfo.social.twitter },
-              ].map(({ icon: Icon, href }, i) => (
-                <a
-                  key={i}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-300"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
+              <a
+                href={academyInfo.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-300"
+                aria-label={`Instagram @${academyInfo.instagramHandle}`}
+              >
+                <IconInstagram className="w-4 h-4" />
+              </a>
             </div>
+            <p className="mt-4 text-sm text-white/50">
+              <a
+                href={academyInfo.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-emerald-400 transition-colors"
+              >
+                @{academyInfo.instagramHandle}
+              </a>
+            </p>
           </div>
 
           <div>
@@ -78,11 +81,18 @@ function Footer() {
             <ul className="space-y-4">
               <li className="flex gap-3 text-sm text-white/60">
                 <MapPin className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                {academyInfo.address}
+                <a
+                  href={academyInfo.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  {academyInfo.address}
+                </a>
               </li>
               <li className="flex gap-3 text-sm text-white/60">
                 <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
-                <a href={`tel:${academyInfo.phone}`} className="hover:text-white transition-colors">
+                <a href={`tel:${academyInfo.phone.replace(/\s/g, '')}`} className="hover:text-white transition-colors">
                   {academyInfo.phone}
                 </a>
               </li>
@@ -90,6 +100,17 @@ function Footer() {
                 <Mail className="w-4 h-4 text-emerald-500 shrink-0" />
                 <a href={`mailto:${academyInfo.email}`} className="hover:text-white transition-colors">
                   {academyInfo.email}
+                </a>
+              </li>
+              <li className="flex gap-3 text-sm text-white/60">
+                <a
+                  href={academyInfo.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-3 hover:text-white transition-colors"
+                >
+                  <span className="text-emerald-500 shrink-0">@</span>
+                  {academyInfo.instagramHandle}
                 </a>
               </li>
               <li className="flex gap-3 text-sm text-white/60">
