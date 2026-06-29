@@ -1,8 +1,7 @@
-import { ClipboardList, QrCode, Clock, Phone, CheckCircle2, MapPin } from 'lucide-react'
+import { ClipboardList, Clock, Phone, CheckCircle2, MapPin } from 'lucide-react'
 import PageHero from '../common/PageHero'
 import AnimatedSection from '../common/AnimatedSection'
 import InterestForm from '../forms/InterestForm'
-import EnrollmentQR from '../qr/EnrollmentQR'
 import { academyInfo } from '../../data/content'
 import images from '../../data/images'
 
@@ -93,20 +92,6 @@ function ImInterested() {
             </div>
 
             <AnimatedSection delay={0.15} className="lg:col-span-2 space-y-6">
-              <div className="bg-emerald-900 rounded-3xl p-8 text-center">
-                <div className="flex items-center justify-center gap-2 text-emerald-400 mb-6">
-                  <QrCode className="w-5 h-5" />
-                  <span className="text-xs font-semibold tracking-widest uppercase">
-                    Banner QR Code
-                  </span>
-                </div>
-                <EnrollmentQR size={200} />
-                <p className="mt-6 text-white/50 text-sm leading-relaxed">
-                  Download this QR code and print it on your physical banner. When scanned, it opens
-                  this enrollment page directly.
-                </p>
-              </div>
-
               <div className="bg-white rounded-3xl p-8 border border-navy-100">
                 <div className="flex items-center gap-2 mb-6">
                   <Clock className="w-5 h-5 text-emerald-600" />
