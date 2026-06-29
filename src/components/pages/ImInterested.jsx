@@ -2,10 +2,13 @@ import { ClipboardList, Clock, Phone, CheckCircle2, MapPin } from 'lucide-react'
 import PageHero from '../common/PageHero'
 import AnimatedSection from '../common/AnimatedSection'
 import InterestForm from '../forms/InterestForm'
+import useQrScanTracker from '../../hooks/useQrScanTracker'
 import { academyInfo } from '../../data/content'
 import images from '../../data/images'
 
 function ImInterested() {
+  useQrScanTracker()
+
   const steps = [
     { icon: ClipboardList, title: 'Fill the Form', desc: 'Enter your name, age, and mobile number.' },
     { icon: Phone, title: 'We Call You', desc: 'Our team contacts you within 48 hours to discuss programs and scheduling.' },

@@ -3,6 +3,7 @@ import About from '../pages/About'
 import CoachingStaff from '../pages/CoachingStaff'
 import Contact from '../pages/Contact'
 import ImInterested from '../pages/ImInterested'
+import AnalyticsRev from '../pages/AnalyticsRev'
 import { Routes, Route } from 'react-router-dom'
 
 function Routers() {
@@ -13,6 +14,7 @@ function Routers() {
       <Route path="/coaching-staff" element={<CoachingStaff />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/interested" element={<ImInterested />} />
+      <Route path="/analytics/rev" element={<AnalyticsRev />} />
     </Routes>
   )
 }

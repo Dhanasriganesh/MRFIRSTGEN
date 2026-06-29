@@ -37,7 +37,7 @@ Then run: npm run generate:qr
   process.exit(1)
 }
 
-const url = `${siteUrl}/interested`
+const url = `${siteUrl}/interested?src=qr`
 
 await QRCode.toFile(resolve(root, 'public/enrollment-qr.png'), url, {
   width: 1024,

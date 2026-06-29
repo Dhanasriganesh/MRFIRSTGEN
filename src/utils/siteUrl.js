@@ -15,7 +15,8 @@ export function getSiteUrl() {
 
 export function getEnrollmentUrl() {
   const base = getSiteUrl()
-  return base ? `${base}/interested` : '/interested'
+  const path = '/interested?src=qr'
+  return base ? `${base}${path}` : path
 }
 
 export function isLocalUrl(url = getEnrollmentUrl()) {
