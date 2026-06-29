@@ -2,17 +2,12 @@ import { useState } from 'react'
 import { Send } from 'lucide-react'
 import toast, { Toaster } from 'react-hot-toast'
 import Button from '../common/Button'
-import { experienceLevels, preferredPrograms } from '../../data/content'
 import { buildWhatsAppUrl, buildInterestWhatsAppMessage } from '../../utils/whatsapp'
 
 const initialForm = {
   name: '',
   age: '',
   phone: '',
-  email: '',
-  experience: '',
-  program: '',
-  message: '',
 }
 
 export default function InterestForm() {
@@ -25,7 +20,7 @@ export default function InterestForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!form.name || !form.phone) {
-      toast.error('Please fill in your name and phone number.')
+      toast.error('Please fill in your name and mobile number.')
       return
     }
 
@@ -34,110 +29,69 @@ export default function InterestForm() {
   }
 
   const inputClass =
-    'w-full px-5 py-3.5 rounded-xl bg-white border border-navy-100 text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all'
+    'w-full px-3.5 py-2.5 text-sm rounded-lg md:px-5 md:py-3.5 md:text-base md:rounded-xl bg-white border border-navy-100 text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all'
+
+  const labelClass = 'block text-xs md:text-sm font-medium text-navy-700 mb-1 md:mb-2'
 
   return (
     <>
-      <Toaster position="top-center" toastOptions={{ className: 'text-sm font-medium' }} />
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <div className="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label className="block text-sm font-medium text-navy-700 mb-2">Full Name *</label>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="Player's full name"
-              className={inputClass}
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-navy-700 mb-2">Age</label>
-            <input
-              type="number"
-              name="age"
-              value={form.age}
-              onChange={handleChange}
-              placeholder="Age in years"
-              min="5"
-              max="60"
-              className={inputClass}
-            />
-          </div>
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label className="block text-sm font-medium text-navy-700 mb-2">Phone Number *</label>
-            <input
-              type="tel"
-              name="phone"
-              value={form.phone}
-              onChange={handleChange}
-              placeholder="+91 XXXXX XXXXX"
-              className={inputClass}
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-navy-700 mb-2">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="email@example.com"
-              className={inputClass}
-            />
-          </div>
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label className="block text-sm font-medium text-navy-700 mb-2">Experience Level</label>
-            <select name="experience" value={form.experience} onChange={handleChange} className={inputClass}>
-              <option value="">Select level</option>
-              {experienceLevels.map((level) => (
-                <option key={level} value={level}>
-                  {level}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-navy-700 mb-2">Preferred Program</label>
-            <select name="program" value={form.program} onChange={handleChange} className={inputClass}>
-              <option value="">Select program</option>
-              {preferredPrograms.map((prog) => (
-                <option key={prog} value={prog}>
-                  {prog}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
+      <Toaster position="top-center" toastOptions={{ className: 'text-xs md:text-sm font-medium' }} />
+      <form onSubmit={handleSubmit} className="space-y-3.5 md:space-y-5">
         <div>
-          <label className="block text-sm font-medium text-navy-700 mb-2">Additional Message</label>
-          <textarea
-            name="message"
-            value={form.message}
+          <label className={labelClass}>Name *</label>
+          <input
+            type="text"
+            name="name"
+            value={form.name}
             onChange={handleChange}
-            rows={4}
-            placeholder="Tell us about your cricket goals..."
-            className={`${inputClass} resize-none`}
+            placeholder="Player's name"
+            className={inputClass}
+            required
           />
         </div>
 
-        <p className="text-xs text-navy-500">
-          Submitting will open WhatsApp with your details pre-filled so our team can respond quickly.
+        <div>
+          <label className={labelClass}>Age</label>
+          <input
+            type="number"
+            name="age"
+            value={form.age}
+            onChange={handleChange}
+            placeholder="Age in years"
+            min="5"
+            max="60"
+            className={inputClass}
+          />
+        </div>
+
+        <div>
+          <label className={labelClass}>Mobile Number *</label>
+          <input
+            type="tel"
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+            placeholder="+91 XXXXX XXXXX"
+            className={inputClass}
+            required
+          />
+        </div>
+
+        <p className="text-[11px] md:text-xs text-navy-500 leading-relaxed">
+          <span className="md:hidden">Opens WhatsApp with your details pre-filled.</span>
+          <span className="hidden md:inline">
+            Submitting will open WhatsApp with your details so our team can respond quickly.
+          </span>
         </p>
 
-        <Button type="submit" className="w-full sm:w-auto">
-          <Send className="w-4 h-4" />
-          Show Interest on WhatsApp
+        <Button
+          type="submit"
+          variant="gold"
+          className="w-full md:w-auto text-xs py-2 px-4 gap-1.5 md:text-sm md:py-3.5 md:px-7 md:gap-2 font-medium md:font-semibold shadow-md md:shadow-lg"
+        >
+          <Send className="w-3.5 h-3.5 md:w-4 md:h-4" />
+          <span className="md:hidden">Show Interest</span>
+          <span className="hidden md:inline">Show Interest on WhatsApp</span>
         </Button>
       </form>
     </>

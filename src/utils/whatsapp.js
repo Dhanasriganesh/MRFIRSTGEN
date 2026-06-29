@@ -13,11 +13,7 @@ export function buildInterestWhatsAppMessage(form) {
     '',
     `Name: ${form.name}`,
     form.age ? `Age: ${form.age}` : null,
-    `Phone: ${form.phone}`,
-    form.email ? `Email: ${form.email}` : null,
-    form.experience ? `Experience: ${form.experience}` : null,
-    form.program ? `Preferred Program: ${form.program}` : null,
-    form.message ? `Message: ${form.message}` : null,
+    `Mobile Number: ${form.phone}`,
   ].filter(Boolean)
 
   return lines.join('\n')
