@@ -3,6 +3,8 @@
  * Replace these files in public/images/ when you have your own photos.
  */
 
+import academyLogo from '../assets/MR-logo.png'
+
 export const images = {
   hero: {
     home: '/images/hero-home.jpg',
@@ -47,12 +49,8 @@ export const images = {
   },
 
   coaches: {
-    rajesh: '/images/coach-1.jpg',
-    meera: '/images/coach-2.jpg',
-    vikram: '/images/coach-3.jpg',
-    ananya: '/images/coach-4.jpg',
-    david: '/images/coach-5.jpg',
-    sanjay: '/images/coach-6.jpg',
+    murthy: academyLogo,
+    revanth: academyLogo,
   },
 }
 

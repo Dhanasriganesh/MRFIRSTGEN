@@ -8,14 +8,13 @@ import {
 } from 'lucide-react'
 import AnimatedSection, { FadeIn } from '../common/AnimatedSection'
 import SectionHeading from '../common/SectionHeading'
-import StatsCounter from '../common/StatsCounter'
+import CoachesHighlight from '../common/CoachesHighlight'
 import Button from '../common/Button'
 import DynamicIcon from '../common/DynamicIcon'
 import EnrollmentQR from '../qr/EnrollmentQR'
 import SafeImage from '../common/SafeImage'
 import images from '../../data/images'
 import {
-  stats,
   programs,
   whyChooseUs,
   facilities,
@@ -49,7 +48,7 @@ function Home() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-700 text-xs font-semibold tracking-widest uppercase mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Hyderabad's Premier Cricket Academy
+              Hyderabad's New Cricket Academy
             </motion.div>
 
             <motion.h1
@@ -70,8 +69,8 @@ function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mt-6 text-lg text-emerald-900/75 max-w-lg leading-relaxed"
             >
-              {academyInfo.fullName} — nurturing talent with world-class coaching, cutting-edge
-              facilities, and a legacy of excellence since 2013.
+              {academyInfo.fullName} — a new academy in Hyderabad with expert coaching from Murthy
+              and Revanth, structured programs, and a focus on every player's development.
             </motion.p>
 
             <motion.div
@@ -133,11 +132,11 @@ function Home() {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* Expert Coaches */}
       <section className="bg-navy-900 section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.06),transparent_70%)]" />
         <div className="relative container-premium">
-          <StatsCounter stats={stats} />
+          <CoachesHighlight />
         </div>
       </section>
 
@@ -158,8 +157,8 @@ function Home() {
               />
             </div>
             <div className="absolute -bottom-6 -right-4 lg:right-8 bg-emerald-600 text-white rounded-2xl p-6 shadow-2xl shadow-emerald-600/30">
-              <p className="font-display text-4xl font-bold">12+</p>
-              <p className="text-sm text-white/80 mt-1">Years of Excellence</p>
+              <p className="font-display text-4xl font-bold">2</p>
+              <p className="text-sm text-white/80 mt-1">Expert Coaches</p>
             </div>
           </AnimatedSection>
 
@@ -167,7 +166,7 @@ function Home() {
             <SectionHeading
               eyebrow="About Us"
               title="Building Future Cricket Stars"
-              subtitle="From a single turf wicket to Hyderabad's most respected cricket development center — our journey is defined by passion, precision, and player success."
+              subtitle="A new academy in Hyderabad — founded by Murthy and Revanth to give every player expert coaching, structured training, and room to grow."
               align="left"
             />
             <AnimatedSection delay={0.2}>
@@ -334,8 +333,8 @@ function Home() {
               <span className="text-gradient-emerald">Cricket Journey?</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
-              Join 850+ players who trust MR FIRSTGEN for their development. Register your interest
-              today and receive a complimentary trial session.
+              Be among the first to join MR FIRSTGEN. Register your interest today and receive a
+              complimentary trial session.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button to="/interested" variant="gold">

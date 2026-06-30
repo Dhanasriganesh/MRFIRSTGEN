@@ -1,5 +1,3 @@
-import { recordScan, getStats, hydrateStore, exportStore } from '../server/analyticsStore.js'
-
 const DEVICE_KEY = 'mrfg_device_id'
 
 export function getDeviceId() {

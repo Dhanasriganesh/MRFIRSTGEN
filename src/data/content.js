@@ -29,13 +29,6 @@ export const navLinks = [
   { label: 'Contact', path: '/contact' },
 ]
 
-export const stats = [
-  { value: 850, suffix: '+', label: 'Players Trained' },
-  { value: 12, suffix: '+', label: 'Years of Excellence' },
-  { value: 45, suffix: '+', label: 'Tournament Wins' },
-  { value: 18, suffix: '', label: 'Expert Coaches' },
-]
-
 export const programs = [
   {
     title: 'Foundation Batch',
@@ -68,34 +61,34 @@ export const programs = [
 
 export const whyChooseUs = [
   {
-    icon: 'Trophy',
-    title: 'Proven Track Record',
-    description: '45+ tournament victories and 120+ players progressed to district and state levels.',
-  },
-  {
     icon: 'Users',
     title: 'Expert Coaching Team',
-    description: 'Certified coaches with first-class and international experience guiding every session.',
+    description: 'Every session is led by Murthy and Revanth — two experienced coaches invested in each player\'s growth.',
   },
   {
     icon: 'Target',
-    title: 'Personalized Development',
-    description: 'Individual skill assessments and custom training roadmaps for every player.',
-  },
-  {
-    icon: 'Dumbbell',
-    title: 'World-Class Facilities',
-    description: 'Floodlit turf wickets, indoor nets, fitness lab, and video analysis suite.',
+    title: 'Structured Development',
+    description: 'Clear training pathways from fundamentals to match-ready skills, tailored to age and ability.',
   },
   {
     icon: 'Heart',
-    title: 'Holistic Growth',
-    description: 'We build character, discipline, and leadership alongside cricketing excellence.',
+    title: 'Player-First Approach',
+    description: 'As a new academy, we keep batches focused so every player gets attention, feedback, and encouragement.',
+  },
+  {
+    icon: 'Dumbbell',
+    title: 'Complete Training Setup',
+    description: 'Quality nets, turf practice, fitness work, and match-style drills in a professional environment.',
   },
   {
     icon: 'Shield',
     title: 'Safe & Supportive',
-    description: 'Structured environment with qualified physios and age-appropriate training loads.',
+    description: 'A disciplined, welcoming space where young cricketers build confidence on and off the field.',
+  },
+  {
+    icon: 'Star',
+    title: 'Hyderabad Location',
+    description: 'Conveniently located in Hyderabad with easy access for players and parents across the city.',
   },
 ]
 
@@ -143,18 +136,37 @@ export const testimonials = [
 ]
 
 export const achievements = [
-  'Hyderabad Junior League Champions 2025',
-  '12 Players Selected for State U-16 Camp',
-  'Best Cricket Academy Award — Telangana Sports Council',
-  'Inter-Academy T20 Series Winners',
+  'New Cricket Academy in Hyderabad',
+  'Expert Coaching by Murthy & Revanth',
+  'Structured Programs for Every Age Group',
+  'Scan the QR Code to Register Your Interest',
 ]
 
 export const aboutTimeline = [
-  { year: '2013', title: 'The Beginning', description: 'Founded with a single turf wicket and a vision to nurture raw talent.' },
-  { year: '2016', title: 'First Champions', description: 'Our U-14 team won the district championship — our first major trophy.' },
-  { year: '2019', title: 'Facility Expansion', description: 'Added indoor nets, fitness center, and video analysis technology.' },
-  { year: '2022', title: 'State Recognition', description: 'Recognized as a premier cricket development center by Telangana Cricket Association.' },
-  { year: '2025', title: '850+ Alumni', description: 'Continuing to shape the next generation of cricketing stars.' },
+  {
+    year: '2025',
+    title: 'The Vision',
+    description:
+      'Murthy and Revanth came together with a shared goal — to launch a cricket academy focused on quality coaching, not big numbers.',
+  },
+  {
+    year: '2026',
+    title: 'MR FIRSTGEN Launches',
+    description:
+      'MR FIRSTGEN Cricket Academy opens in Hyderabad with structured batches and hands-on expert coaching from day one.',
+  },
+  {
+    year: '2026',
+    title: 'Enrollments Open',
+    description:
+      'Players and parents can register interest via our website, contact page, or the banner QR code.',
+  },
+  {
+    year: 'Next',
+    title: 'Building Together',
+    description:
+      'We are growing our academy one player at a time — with discipline, dedication, and the right guidance at the center.',
+  },
 ]
 
 export const coreValues = [
@@ -166,65 +178,23 @@ export const coreValues = [
 
 export const coaches = [
   {
-    name: 'Coach Rajesh Kumar',
-    role: 'Head Coach & Director',
-    specialty: 'Batting & Strategy',
-    experience: '18 years | Former Ranji Player',
-    bio: 'Led Hyderabad U-19 to three consecutive championships. Specializes in building technically sound batters with exceptional game awareness.',
-    image: images.coaches.rajesh,
+    name: 'Murthy',
+    role: 'Expert Coach ',
+    specialty: 'Batting & All-Round Development',
+    experience: 'Experienced cricket coach',
+    bio: 'Murthy brings deep technical knowledge and a calm, structured approach to training. He focuses on strong fundamentals, match awareness, and helping every player build confidence at the crease.',
+    image: images.coaches.murthy,
     featured: true,
   },
   {
-    name: 'Coach Meera Reddy',
-    role: 'Senior Bowling Coach',
-    specialty: 'Fast & Spin Bowling',
-    experience: '14 years | Level 3 Certified',
-    bio: 'Former state-level fast bowler known for developing pace and accuracy through biomechanics-focused training programs.',
-    image: images.coaches.meera,
-    featured: false,
+    name: 'Revanth',
+    role: 'Expert Coach ',
+    specialty: 'Bowling, Fielding & Match Skills',
+    experience: 'Experienced cricket coach',
+    bio: 'Revanth specializes in sharpening bowling action, fielding reflexes, and game-day decision-making. His energetic sessions keep players engaged while pushing them to improve with every drill.',
+    image: images.coaches.revanth,
+    featured: true,
   },
-  {
-    name: 'Coach Vikram Singh',
-    role: 'Fielding & Wicket-Keeping',
-    specialty: 'Fielding Excellence',
-    experience: '11 years | IPL Academy Alumni',
-    bio: 'Transforms fielding units with high-intensity drills and reflex training used at professional franchise levels.',
-    image: images.coaches.vikram,
-    featured: false,
-  },
-  {
-    name: 'Coach Ananya Desai',
-    role: 'Youth Development Lead',
-    specialty: 'Junior Programs',
-    experience: '9 years | Child Sports Psychology',
-    bio: 'Creates engaging, age-appropriate programs that build love for cricket while developing fundamental skills.',
-    image: images.coaches.ananya,
-    featured: false,
-  },
-  {
-    name: 'Coach David Fernandes',
-    role: 'Fitness & Conditioning',
-    specialty: 'Sports Performance',
-    experience: '12 years | ASCA Certified',
-    bio: 'Designs cricket-specific fitness programs that enhance speed, agility, and injury prevention for all age groups.',
-    image: images.coaches.david,
-    featured: false,
-  },
-  {
-    name: 'Coach Sanjay Nair',
-    role: 'Video Analyst & Tactics',
-    specialty: 'Performance Analytics',
-    experience: '8 years | BCCI Level 2',
-    bio: 'Uses cutting-edge video analysis and data insights to give players a competitive edge in match situations.',
-    image: images.coaches.sanjay,
-    featured: false,
-  },
-]
-
-export const supportStaff = [
-  { name: 'Dr. Kavitha Rao', role: 'Sports Physiotherapist' },
-  { name: 'Mr. Imran Khan', role: 'Academy Manager' },
-  { name: 'Ms. Lakshmi Prasad', role: 'Nutritionist' },
 ]
 
 export const faqs = [
